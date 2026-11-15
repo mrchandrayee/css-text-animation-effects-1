@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d19">
+  <title>CSS Text Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="heading">
+      <h1>CSS Text Animation</h1>
+    </header>
+
+    <section class="gallery" aria-label="CSS text animation examples">
+      <article class="animation-card">
+        <div class="preview">
+          <span class="preview-tag">PREVIEW</span>
+          <div class="sample">
+            <h2 class="gradient-move">Gradient Flow</h2>
+            <p>Animated Gradient Text</p>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><h3>Gradient Moving Text</h3><button class="copy" data-copy="gradient">Copy CSS</button></div>
+          <pre><code>.gradient-move {
+  background: linear-gradient(
+    90deg, #8b5cf6, #ec4899,
+    #f472b6, #06b6d4, #8b5cf6
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="animation-card">
+        <div class="preview">
+          <span class="preview-tag">PREVIEW</span>
+          <div class="sample">
+            <h2 class="rotate-in">Rotate In</h2>
+            <p>Rotate + Scale Intro</p>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><h3>Rotate In Text</h3><button class="copy" data-copy="rotate">Copy CSS</button></div>
+          <pre><code>.rotate-in {
+  animation: rotateIn 2.5s ease-in-out infinite alternate;
+}
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-20deg) scale(.3);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="animation-card">
+        <div class="preview">
+          <span class="preview-tag">PREVIEW</span>
+          <div class="sample">
+            <h2 class="blur-reveal">Blur to Clear Text</h2>
+            <p>Blur Reveal</p>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><h3>Blur Reveal</h3><button class="copy" data-copy="blur">Copy CSS</button></div>
+          <pre><code>.blur-reveal {
+  animation: blurReveal 2.5s ease-in-out infinite alternate;
+}
+@keyframes blurReveal {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    letter-spacing: 8px;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: 0;
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="animation-card">
+        <div class="preview">
+          <span class="preview-tag">PREVIEW</span>
+          <div class="sample">
+            <h2 class="neon-flicker">Neon Flicker</h2>
+            <p>Flickering Neon Sign Effect</p>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><h3>Flicker Neon Text</h3><button class="copy" data-copy="neon">Copy CSS</button></div>
+          <pre><code>.neon-flicker {
+  color: #50ff80;
+  text-shadow: 0 0 6px #50ff80,
+               0 0 12px #50ff80,
+               0 0 30px #50ff80;
+  animation: flicker 1.8s infinite;
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 6px #50ff80,
+                 0 0 30px #50ff80;
+  }
+  20%, 24%, 55% {
+    opacity: .35;
+    text-shadow: none;
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="animation-card wide">
+        <div class="preview">
+          <span class="preview-tag">PREVIEW</span>
+          <div class="sample flip-scene">
+            <h2 class="flip-text"><span>3D Flip</span></h2>
+            <p>3D Rotating Text</p>
+          </div>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><h3>3D Flip Text</h3><button class="copy" data-copy="flip">Copy CSS</button></div>
+          <pre><code>.flip-text {
+  display: inline-block;
+  animation: flip3d 3s infinite ease-in-out;
+  transform-style: preserve-3d;
+}
+@keyframes flip3d {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(180deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}</code></pre>
+        </div>
+      </article>
+    </section>
+    <footer>HTML <span>•</span> CSS <span>•</span> JAVASCRIPT <span class="footer-note">PURE CSS ANIMATIONS</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
